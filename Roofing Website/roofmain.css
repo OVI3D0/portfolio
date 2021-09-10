@@ -1,0 +1,684 @@
+body{
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    position: absolute;
+    z-index: -99;
+}
+
+header {
+    height: 101px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* header and intro section */
+
+/* Container which houses the logo, company title, and navbar at the very top of the page */
+.header-container {
+    padding-top: 1%;
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+/* free house img found off google */
+.logo {
+    font-size: 51px;
+}
+
+.logo img {
+    height: 100%;
+}
+/* nav containing the logo, and company title */
+.left-nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-left: 2%;
+}
+/* edit to remove the default list style, the margin and padding, and set a color */
+.left-nav nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+/* padding to space out the logo and title a bit */
+.left-nav nav ul li {
+    padding-left: 24px;
+}
+/* display flex to align the nav horizontally, and then center them vertically, and bold it a bit. */
+.right-nav {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+/* container that houses everything in the intro section apart from the header content */
+.intro-container {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("photos/house4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+/* class to design both the residential and commercial divs */
+.residential {
+    text-align: center;
+    border: 4px solid rgba(255, 255, 255, .5);
+    color: white;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+/* to bring the title of the floating divs a bit closer to the top */
+.residential h5 {
+    margin-bottom: 50px;
+}
+/* to help bring the slogans and titles of the divs a bit closer */
+.residential-slogan {
+    margin-bottom: 200px;
+}
+/* code to align the content inside the floating divs */
+#residential {
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    margin: 0 0 12% 5%;
+    padding-top: 2%;
+}
+
+#commercial {
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    margin: 12% 5% 0 0;
+    padding-top: 2%;
+}
+/* styling and positioning for the numbers next to the titles of each floating div */
+.intro-num {
+    color: #33abd6;
+    font-weight: 600;
+    position: relative;
+    right: 75px;
+    top: 40px;
+}
+/* aligning the text of each floating div to match how the original website did it */
+#modern-solutions {
+    text-align: right;
+    padding-right: 5%;
+}
+
+#high-quality {
+    text-align: left;
+    padding-left: 5%;
+}
+/* styling and positioning for the slogan located in the center */
+.slogan {
+    align-self: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5%;
+}
+/* styling for the 'roofing experts' part of the slogan */
+.roofing-experts {
+    color: #33abd6;
+    font-weight: 600;
+}
+/* styling for the button located underneath the slogan */
+.read-more {
+    border: 0px;
+    border-radius: 25px;
+    padding: 8px 32px;
+    background-color: #33abd6;
+    color: white;
+    font-weight: bold;
+}
+/* coloring for when the mouse is hovering over the 'read more' button */
+.read-more:hover {
+    background-color: #54a9ff;
+}
+/* styling and a bit of positioning for the 'free estimate' text in the lower left of the page */
+.free-estimate {
+    font-weight: 700;
+    color: #33abd6;
+    position: absolute;
+    left: 3%;
+    align-self: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+/* styling and positioning for the phone number located inside the free estimate section */
+#phone-num {
+    align-self: flex-start;
+    color: white;
+    font-weight: 700;
+    width: 100%;
+    position: relative;
+    left: 7%;
+    top: -20px;
+}
+/* styling and positioning for the phone icon in the free estimate section */
+#phone-icon {
+    position: relative;
+    right: 10%;
+    top: 55%;
+    font-size: 20px;
+}
+/* color for both the phone icon in the lower left, and the mouse icon in the lower right */
+.fas {
+    color: #33abd6;
+}
+/* style and positioning for the learn more section in the lower right */
+.learn-more {
+    align-self: flex-end;
+    position: absolute;
+    right: 3%;
+    color: white;
+    font-weight: 600;
+}
+/* sizing and positioning for the mouse icon */
+#mouse-icon {
+    font-size: 20px;
+    position: relative;
+    left: 2%;
+}
+/*------------------------------------------------------------------------------------------------------------------------------*/
+/* Media Queries Section for the intro section */
+@media only screen and (max-width: 1250px){
+    .intro-container{
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        height: 1400px;
+        overflow-x: hidden;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    #commercial {
+        margin-bottom: 30%;
+        position: relative;
+        left: 2%;
+    }
+    #residential {
+        position: relative;
+        right: 2%;
+    }
+}
+
+@media only screen and (min-width: 425px){
+    .intro-container {
+        height: 1500px;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .intro-container {
+        height: 1700px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .intro-container{
+        height: 1000px;
+        flex-direction: row;
+    }
+    #commercial {
+        align-self: center;
+        position: relative;
+        bottom: 10%;
+    }
+    #residential {
+        align-self: center;
+        position: relative;
+        top: 10%;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+    #commercial {
+        position: relative;
+        right: 10%;
+    }
+}
+
+/* ------------------------------------------About me Section-------------------------------------------------------------------- */
+
+/* Container that houses the entire 'about us' section */
+.about-me-container {
+    width: 100%;
+}
+
+/* container that houses the intro 'About us' text, and the large text under it, that is left aligned */
+.about-me-intro-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Styling for the 'about us' text that appears at the top of the section */
+.about-me-intro-container h6 {
+    padding-left: 10%;
+    color: #33abd6;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.about-me-intro-container h2 {
+    padding-right: 28%;
+}
+
+.about-us-container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us-container h5 {
+    font-weight: 500;
+}
+
+#about-us {
+    margin-top: 20px;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.we-are-proud {
+    flex-basis: 50%;
+}
+
+.we-are-proud h5 {
+    padding-bottom: 20px;
+}
+
+.satisfied-specialists-column {
+    flex-basis: 50%;
+}
+
+.satisfied-specialists-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.satisfied-customers {
+    padding-left: 7%;
+    flex-basis: 50%;
+}
+
+.satisfied {
+    font-size: 51px;
+    padding-bottom: 40px;
+}
+
+.satisfied-customers h1 {
+    color: #33abd6;
+}
+
+.satisfied-customers h6 {
+    font-weight: bold;
+}
+
+.logos-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logos-row img {
+    height: 150px;
+    width: 150px;
+    margin: 10% 5% 10% 5%;
+}
+
+@media only screen and (max-width: 768px){
+    .about-me-container {
+        text-align: center;
+        position: relative;
+        top: 1400px;
+    }
+    .we-are-proud {
+        flex-basis: 100%;
+    }
+    .satisfied-specialists-column {
+        flex-basis: 100%;
+    }
+    .about-me-intro-container h6 {
+        padding-left: 0;
+    }
+    .about-me-intro-container h2 {
+        padding-right: 0%;
+    }
+    #about-us {
+        margin-bottom: 10%;
+    }
+    .logos-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .about-me-container{
+        top: 1700px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .about-me-container{
+        position: relative;
+        top: 1700px;
+    }
+    .about-me-intro-container h6 {
+        padding-left: 10%;
+        padding-bottom: 20px;
+    }
+    .about-me-intro-container h2 {
+        padding-right: 28%;
+    }
+}
+
+@media only screen and (min-width: 877px) {
+    .logos-row {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .about-me-container {
+        top: 1000px;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Section that describes the most important things */
+.most-important-container {
+    height: 350px;
+    width: 100%;
+    background-color: grey;
+    position: relative;
+    top: 1000px;
+}
+
+.important-text-container {
+    text-align: left;
+}
+
+.important-text-container h6 {
+    padding-left: 10%;
+    color: #33abd6;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.important-text-container h2 {
+    padding-left: 5%;
+    padding-right: 60%;
+}
+
+#our-services {
+    float: right;
+    margin-right: 20%;
+    margin-top: -50px;
+}
+
+.most-important-blue {
+    position: relative;
+    top: 80px;
+    height: 800px;
+}
+
+.carousel-caption {
+    text-align: left;
+    padding-right: 40%;
+    padding-bottom: 10%;
+}
+
+.carousel-caption h6 {
+    color: #33abd6;
+    font-weight: bold;
+}
+
+.d-block {
+    filter: brightness(40%);
+    height: 800px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 426px){
+    .most-important-container {
+        top: 1400px;
+    }
+    .most-important-blue, .d-block {
+        height: 500px;
+    }
+    .important-text-container h2, h6 {
+        padding: 5%;
+    }
+    .important-text-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    #our-services {
+        margin: 0;
+        margin-top: 5%;
+        align-self: center;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .most-important-container {
+        top: 1800px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .most-important-blue, .d-block {
+        height: 800px;
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+    .most-important-blue, .d-block {
+        height: 1200px;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------- */
+.reviews-container {
+    margin: 0 auto;
+    height: 500px;
+    width: 100%;
+    position: relative;
+    top: 1680px;
+}
+  
+.reviews-row {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-box {
+    padding: 2%;
+    width: 20%;
+    border: 1px solid rgb(172, 171, 171);
+    flex-basis: 20%;
+}
+
+.review-box p {
+    color: grey;
+}
+
+.review-box h7 {
+    font-weight: 500;
+}
+
+.review-box h6 {
+    font-weight: 700;
+}
+
+#middle-review {
+    background-color: rgb(7, 7, 85);
+    color: white;
+    text-align: center;
+    height: 80%;
+}
+
+#middle-review h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
+#middle-review p{
+    color: white;
+    padding-top: 5%;
+}
+@media only screen and (max-width: 426px){
+    .review-box {
+        width: 80%;
+        flex-basis: 80%;
+        position: relative;
+        top: 1010px;
+    }
+    .reviews-row {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 427px) and (max-width: 768px) {
+    .review-box {
+        width: 80%;
+        flex-basis: 80%;
+    }
+    .reviews-row {
+        flex-direction: column;
+        position: relative;
+        top: 1250px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .reviews-container {
+        top: 1710px;
+    }
+}
+
+@media only screen and (min-width: 2560px){
+    .reviews-container {
+        top: 2000px;
+    }
+}
+
+footer {
+    height: 28%;
+    width: 100%;
+    position: absolute;
+    top: 3500px;
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(7, 7, 85);
+    color: white;
+}
+
+.footer-row {
+    display: flex;
+    width: 100%;
+    height: 30%;
+}
+
+.footer-button {
+    height: 100%;
+    flex-basis: 50%;
+    border: 2px solid rgb(60, 72, 102);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.residentialfoot {
+    text-align: right;
+    padding-right: 4%;
+}
+
+.commercialfoot {
+    padding-left: 4%;
+}
+
+.footer-second-row {
+    padding-top: 3%;
+    align-self: center;
+    height: 35%;
+    width: 80%;
+    display: flex;
+}
+.footer-second-row h1 {
+    flex-basis: 60%;
+}
+.footer-second-row p {
+    float: right;
+    margin-left: auto;
+}
+.back-to-top {
+    border: none;
+    background: none;
+}
+
+.footer-third-row {
+    height: 35%;
+    width: 80%;
+    align-self: center;
+}
+
+.footer-third-row h7 {
+    margin-left: 2%;
+    color: grey;
+}
+
+#credit {
+    float: right;
+    margin-right: 2%;
+}
+
+@media only screen and (max-width: 768px) {
+    footer {
+        position: absolute;
+        top: 5950px;
+    }
+    .footer-second-row {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer-second-row p {
+        align-self: center;
+    }
+    #credit {
+        margin: none;
+        float: left;
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+    footer {
+        position: absolute;
+        top: 3800px;
+    }
+}
