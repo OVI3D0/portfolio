@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/* header navigation bar */
+
+#headernav {
+    height: 44px;
+    background-color: #333333;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#headernav li {
+    display: inline;
+}
+
+#headernav a {
+    display: inline-block;
+    padding: 12px 1.5% 12px 1.5%;
+}
+
+#headernav a:hover {
+    color: white;
+}
+
+.fa-apple, #headernav a {
+    color: #f5f5f7;
+    font-size: 0.75em;
+    text-decoration: none;
+}
+
+/* second navigation bar, right under the first */
+
+#secondnav {
+    padding-top: 10px;
+    padding-bottom: 2px;
+    height: 45px;
+}
+
+#secondnav nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#secondnav nav li {
+    display: inline;
+}
+
+#secondnav a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+#secondnav-title {
+    color: black;
+    font-size: 1.4em;
+    font-weight: 500;
+    padding-right: 40%;
+}
+
+.secondnav-links {
+    padding-left: 8%;
+}
+
+.secondnav-links li {
+    padding: 0px 10px 0px 10px;
+}
+
+.secondnav-links a {
+    color: #333333;
+    font-weight: 400;
+    font-size: 0.82em;
+}
+
+.secondnav-links a:hover {
+    color: #0070c9;
+}
+
+.hr {
+    margin-top: -5px;
+}
+
+
+/*  */
+
+.choose {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.choose h1 {
+    font-weight: 500;
+    font-size: 2.25em;
+}
+
+.choose2 {
+    text-align: center;
+    padding-top: 25px;
+    font-weight: 500;
+    font-size: 1.25em;
+}
+
+.choose2 h3 {
+    font-weight: 500;
+}
+
+.choose2 i {
+    margin-top: -10px;
+}
+
+.specialist {
+    font-size: .75em;
+}
+
+.specialist p {
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+.link {
+    text-decoration: none;
+    color: #0070c9;
+    font-weight: 400;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.columns {
+    width: 816px;
+    margin: auto;
+    display: flex;
+}
+
+.column1 {
+    display: flex;
+    flex-direction: column;
+    flex: 50%;
+    position: relative;
+}
+
+.mac {
+    height: 210px;
+    width: 226px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.columntxt {
+    font-weight: 300;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.color {
+    padding: 0 1% 0 0.5%;
+    padding-top: 10px;
+    padding-bottom: 35px;
+}
+
+.column1 div a img {
+    height: 32px;
+    width: 32px;
+}
+
+.column1 div a img:hover{
+    border: 1px solid gray;
+    border-radius: 50%;
+}
+
+.column1 h2 {
+    font-weight: 500;
+}
+
+.tradein {
+    padding-top: 20px;
+    font-weight: 500;
+}
+
+.or {
+    margin-bottom: -10px;
+}
+
+.select {
+    background-color: #0070c9;
+    background: linear-gradient(#42a1ec,#0070c9);
+    border: 1px solid #07c;
+    border-radius: 4px;
+    color: #fff;
+    width: 75%;
+    font-size: 17px;
+    padding: 4px 15px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.select:hover {
+    background-color: #147bcd;
+    background: linear-gradient(#51a9ee,#147bcd);
+    border-color: #1482d0;
+}
+
+.fa-bookmark {
+    color: #0070c9;
+}
+
+.savebtn {
+    position: relative;
+    left: 70%;
+    bottom: 60px;
+    width: 18px;
+}
+
+.cols1 {
+    height: 350px;
+}
+
+.cols2 {
+    height: 370px;
+}
+
+.cols3 {
+    height: 300px;
+}
+
+.cols4 {
+    height: 400px;
+}
+
+.comparediv {
+    margin-top: 100px;
+    height: 660px;
+    width: 100%;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.comparediv h1 {
+    padding-top: 80px;
+    font-weight: 500;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.comparediv div {
+    padding-top: 50px;
+}
+
+.applecare {
+    height: 580px;
+    width: 820px;
+    margin: auto;
+    line-height: 1.5;
+}
+
+.applecare img {
+    padding-top: 80px;
+    align-self: center;
+}
+
+.lowerh1 {
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 2em;
+}
+
+.caretxt {
+    font-size: 1.05em;
+}
+
+.businessdiv {
+    height: 220px;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.businessdiv h1 {
+    padding-top: 50px;
+}
+
+.appletvdiv {
+    height: 375px;
+    width: 1100px;
+    background-color: black;
+    margin: auto;
+    position: relative;
+}
+
+.apptvtxt {
+    height: 150px;
+    width: 250px;
+    margin-left: 100px;
+    position: absolute;
+    top: 30%;
+}
+
+.apptvtxt p {
+    color: white;
+}
+
+.apptvtxt div a {
+    padding-right: 20px;
+}
+
+.hanks {
+    position: absolute;
+    right: 0%;
+}
+
+.tinyprintdiv {
+    background-color: #fafafa;
+}
+
+.tinyprintcontainer {
+    width: 1000px;
+    margin: auto;
+}
+
+.tinyprint {
+    font-size: 0.8em;
+    color: #86868b;
+    line-height: 1.2;
+}
+
+.top {
+    margin-top: 0;
+    padding-top: 12px;
+}
+
+.chainlinks {
+    text-decoration: none;
+    color: #515154;
+    font-size: 0.9em;
+    margin: 0 10px;
+    font-weight: 400;
+}
+
+.chainlinks:hover {
+    text-decoration: underline;
+}
+
+.linkchain {
+    color: #515154;
+}
+
+.linkgrid{
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.linkgrid div {
+    flex: 20%;
+    line-height: 1.5;
+}
+
+.linkgrid div a {
+    font-size: 0.8em;
+    margin: 10px 0;
+}
+
+.chaintxt {
+    text-decoration: none;
+    color: #515154;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.bgcolor {
+    background-color: #fafafa;
+}
