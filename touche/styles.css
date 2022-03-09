@@ -1,0 +1,138 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h2, h4, h5, .address-custom, .pricetag, .p-quote, .footer-date, .events-link h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+.caplink, .footer-title {
+    text-transform: uppercase;
+}
+
+.caplink, .btn-custom, .footer-title {
+    font-weight: 600;
+}
+
+.caplink, .footer-title, .time, .btn-custom {
+    font-size: 0.75rem;
+}
+
+.fa-location-dot, .hr-custom, .time, .footer-title, .email {
+    color: #F5A637;
+}
+
+.btn-custom {
+    padding: 16px 32px;
+    border: 1px solid #F5A637;
+    border-radius: 0;
+}
+
+.fa-brands {
+    padding: 0px 23px 50px;
+}
+
+.fa-location-dot {
+    padding-right: 15px;
+}
+
+.address-custom {
+    color: rgba(255,255,255,.75);
+}
+
+.hr-custom {
+    width: 32px;
+    height: 3px!important;
+    margin: 16px 0px;
+}
+
+.or-pic {
+    height: 90%;
+    width: 80%;
+}
+
+.div-custom-border {
+    height: 90%;
+    width: 80%;
+    border: 1px solid #6C757D;
+    position: relative;
+    bottom: 90%;
+    left: 30%;
+    z-index: -1;
+}
+
+.div-custom-bg {
+    height: 90%;
+    width: 80%;
+    background-color: #e9ecef;
+    position: relative;
+    bottom: 185%;
+    right: 18%;
+    z-index: -1;
+}
+
+h2, h4, h5 {
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+.menu-h2 {
+    font-size: 19px!important;
+}
+
+.nav-link {
+    color: black;
+}
+
+.p-quote {
+    font-size: 18px;
+}
+
+.events-link {
+    text-decoration: none;
+    color: black;
+}
+.events-link h1 {
+    font-size: 40px;
+}
+
+.events-link p {
+    font-size: 16px;
+
+}
+
+.map-container{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-container iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.p-fancy, .footer-icon, .footer-date {
+    color: #6C757D;
+}
+
+.p-fancy {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+}
+
+.footer-date {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 767px) {
+    .div-custom-bg, .div-custom-border {
+        visibility: hidden;
+    }
+}
