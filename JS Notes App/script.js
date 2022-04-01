@@ -1,126 +1,126 @@
-let addBtn = document.getElementById('add-btn')
-let addTitle = document.getElementById('note-title')
-let addText = document.getElementById('note-text')
+let title = document.getElementById('noteTitle');
+let details = document.getElementById('noteDetails');
+let addBtn = document.getElementById('addBtn');
+let noteList = document.getElementById('noteDisplay');
+
 
 addBtn.addEventListener("click", (e) => {
-    /* if the title or text box are empty,
-    and the user attempts to submit, return an alert. */
-    if (addTitle.value == "" || addText.value == ""){
-        return alert("Please add a Title & Details before adding.")
+
+    // Make sure the notes have a value before submitting
+    if (title.value == "") {
+        return alert("Please make sure there is at least a title");
     }
-    // setting the notes variable to whatever is in localStorage
-    let notes = localStorage.getItem("notes");
-    // if local storage is empty, set our notes object as an empty array
-    if (notes == null){
+    // notes = whatever notes we may have in localStorage
+    let notes = localStorage.getItem('notes');
+    // if local storage is empty
+    if(notes == null) {
+        // ours notesObj is empty
         notesObj = [];
     } else {
-        // else, set our notes object to whatever is in localStorage
+        // else, parse the notes
         notesObj = JSON.parse(notes);
     }
-    // creating an object for a users note
+    // create an object for our notes
+    // will contain the user input
     let myObj = {
-        title: addTitle.value,
-        text: addText.value
+        title: title.value,
+        text: details.value
     }
-    // pushing the note to the note array
+    // push the user input to our notesObj
     notesObj.push(myObj);
-    // saving the note from the notesObj to local storage
-    localStorage.setItem("notes", JSON.stringify(notesObj));
-    // set the title and text boxes to empty after we submit
-    addTitle.value = "";
-    addText.value = "";
-
-    // calling function to show the notes on the page
+    // Push the users note to localstorage
+    localStorage.setItem('notes', JSON.stringify(notesObj));
+    // clear our title and details
+    title.value = "";
+    details.value = "";
+    // call the showNotes function
     showNotes();
+
 })
 
-// creating showNotes function
-function showNotes() {
-    let notes = localStorage.getItem("notes");
-        // if local storage is empty, set our notes object as an empty array
-        if (notes == null){
-            notesObj = [];
-        } else {
-            // else, set our notes object to whatever is in localStorage
-            notesObj = JSON.parse(notes);
-    }
-
-    let html = "";
-    notesObj.forEach(function(element, index) {
-        // for each note added, this is what will be shown.
-        // notice the ${} variables. This is setting each notes number, title, and text.
-        /* for the edit and delete buttons, we gave them each an id of the index they 
-        are at. We also made is so when each button is clicked, the edit or delete
-        function is called, which targets the note that the button is located in. this is
-        achieved using the 'this' function. */
-        // the variable HTML is assigned to this block of text, which is the form our notes will take
-        html += `
-        <div id="note" class="notes">
-        <p class="note-counter">Note ${index + 1}</p>
-        <h3 class="note-title">${element.title}</h3>
-        <p class="note-text">${element.text}</p>
-        <button id="${index}" onclick="deleteNote(this.id)" class="note-btn">Delete</button>
-        <button id="${index}" onclick="editNote(this.id)" class="note-btn edit-btn">Edit</button>
-    </div>
-        `;
-    });
-
-    let noteElement = document.getElementById('notes');
-    // if there are objects in localStorage, display them using the form used in the HTML
-    // variable above.
-
-    // else, display the message.
-    if (notesObj.length != 0) {
-        noteElement.innerHTML = html;
+showNotes = () => {
+    // create the notes variable
+    let notes = localStorage.getItem('notes');
+    // if the localStorage is empty
+    if(notes == null) {
+        // our notesObj is empty
+        notesObj = [];
     } else {
-        noteElement.innerHTML = "No notes yet! Add a note using the form above."
+        // else, copy the localStorage's notes into our Obj
+        notesObj = JSON.parse(notes);
     }
-    
+    // clear the noteList div
+    noteList.innerHTML = ''
+    // for each item in the notesObj
+    notesObj.forEach(function(element, index) {
+        // add the following html to the notesList div
+        noteList.innerHTML += `
+        <div class="py-3">
+            <h5>${element.title}</h5>
+            <p>${element.text}</p>
+            <button id="${index}" class="btn btn-danger" onclick="deleteNote(this.id)">Delete <i class="fa-solid fa-trash-can"></i></button>
+            <button id="${index}" class="btn btn-warning" onclick="editNote(this.id)">Edit <i class="fa-solid fa-pen-to-square"></i></button>
+        </div>
+        `
+    })
+
+
+
 }
 
-// function to delete notes
-// we pass index as a paramater
-// because the delete button will call the index of the note it's located at
+// using the index of the note as a parameter
 function deleteNote(index) {
-    // send a message to the user to confirm the delete
-    let confirmDel = confirm("Are you sure you want to delete this note?")
-
-    // if the delete is confirmed
-    if (confirmDel == true) {
-        let notes = localStorage.getItem("notes");
+    // Put out a warning to the user before they delete
+    let confirmDel = confirm('Are you sure you want to delete this note?');
+    // if the confirm delete returns true
+    if(confirmDel) {
+        // set up a variable for notes
+        let notes = localStorage.getItem('notes');
+        // if the local storage is empty
         if (notes == null) {
+            // the notes object would return empty
             notesObj = [];
         } else {
+            // else, translate the local storage's notes into the notesObj
             notesObj = JSON.parse(notes);
         }
+        // as position {index}, remove 1 item (the note)
         notesObj.splice(index, 1);
-        localStorage.setItem("notes", JSON.stringify(notesObj));
+        // put the notesObj with the removed item back into localStorage
+        localStorage.setItem('notes', JSON.stringify(notesObj));
+        // call the showNotes function to show the updated notes
         showNotes();
     }
 }
 
-// function to edit notes
 function editNote(index) {
+    // set up our notes variable to grab the notes that may be stored
     let notes = localStorage.getItem('notes');
-    // make sure the form is clear before editing
-    if (addTitle.value !== "" || addText.value !== "") {
-        return alert("Please clear the form before editing a note!");
+    // make sure the current form values are empty
+    if (title.value !== "" || details.value !== "") {
+        // if they're not, return this alert
+        return alert('please clear the form before editing a note!');
     }
+    // otherwise, start grabbing the notes from localStorage
+    // if localStorage is empty
     if (notes == null) {
+        // then our notes Obj is empty
         notesObj = [];
     } else {
         notesObj = JSON.parse(notes);
     }
-    // console.log(notesObj);
-    // get the note you chose to edit and put its text into the form
-    notesObj.findIndex((element, index) => {
-        addTitle.value = element.title;
-        addText.value = element.text;
-    })
-    // remove the chosen note from the list, so a note is not duplicated
+
+    // make sure our title/details forms are filled with the value
+    // of the specified note
+    title.value = notesObj[index].title;
+    details.value = notesObj[index].text;
+    // now we must remove the note we chose to edit from the list shown
     notesObj.splice(index, 1);
-    localStorage.setItem("notes", JSON.stringify(notesObj));
+    // update the localStorage
+    localStorage.setItem('notes', JSON.stringify(notesObj));
+    // call the showNotes function to update the shown list
     showNotes();
 }
 
+// shows the stored notes on page load
 showNotes();
