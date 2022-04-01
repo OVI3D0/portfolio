@@ -3,7 +3,6 @@ let details = document.getElementById('noteDetails');
 let addBtn = document.getElementById('addBtn');
 let noteList = document.getElementById('noteDisplay');
 
-
 addBtn.addEventListener("click", (e) => {
 
     // Make sure the notes have a value before submitting
@@ -63,8 +62,14 @@ showNotes = () => {
         </div>
         `
     })
-
-
+    // Check if the notes object is not 0
+    if(notesObj.length != 0) {
+        // if it's not 0, let the noteList be the html we added
+        noteList.innerHTML = html;
+    } else {
+        // else, display this message
+        noteList.innerHTML = "No notes yet! Add a note using the form."
+    }
 
 }
 
